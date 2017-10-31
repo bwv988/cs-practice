@@ -1,4 +1,4 @@
-package com.warpbreaks.io.cs;
+//package com.warpbreaks.io.cs;
 
 // A few tests with simple (double) arrays.
 public class ArrayTests {
