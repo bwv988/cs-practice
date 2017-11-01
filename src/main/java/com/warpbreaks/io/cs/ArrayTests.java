@@ -1,3 +1,7 @@
+// Some tests with Java Arrays.
+// Need to disable package for running in Cloud9.
+
+
 //package com.warpbreaks.io.cs;
 
 // A few tests with simple (double) arrays.
