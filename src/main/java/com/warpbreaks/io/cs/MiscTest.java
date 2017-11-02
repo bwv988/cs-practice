@@ -50,7 +50,7 @@ public class MiscTest {
             }
         }
         
-        
+        // FIXME: Will not work so well with >=2 digit dimensions.
         for(int j = 0; j < dim; j++) {
             System.out.print(" " + j);
         }
