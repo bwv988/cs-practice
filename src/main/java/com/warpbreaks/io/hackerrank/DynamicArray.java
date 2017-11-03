@@ -8,8 +8,8 @@ public class DynamicArray {
     
     public static void main(String[] args) {
         int N, Q, lastAnswer = 0;
-        ArrayList<ArrayList<Integer>> seqList = new ArrayList<ArrayList<Integer>>();
-
+        int [][] seqList;
+        int [] lastQ;
         Scanner console = new Scanner(System.in);
         Scanner lineTokenizer = new Scanner(console.nextLine());
 
@@ -18,11 +18,10 @@ public class DynamicArray {
         N = lineTokenizer.nextInt();
         Q = lineTokenizer.nextInt();
 
-        for(int i = 0; i < N; i++) {
-            seqList.add(new ArrayList<Integer>());
-        }
-
         // Can have at most Q inserts.
+        seqList = new int[N][Q];
+        lastQ = new int[Q];
+
         for(int i = 0; i < Q; i++) {
             lineTokenizer = new Scanner(console.nextLine());
 
@@ -30,12 +29,19 @@ public class DynamicArray {
             int x = lineTokenizer.nextInt();
             int y = lineTokenizer.nextInt();
             int seq = (x ^ lastAnswer) % N;
-            ArrayList<Integer> sequence = seqList.get(seq);
+            int [] sequence = seqList[seq];
 
             if (queryType == 1) {
-                sequence.add(y);
+                System.out.println("Sequence: " + seq);
+                System.out.println("lastQ for this sequence: " + lastQ[seq]);
+
+                sequence[lastQ[seq]] = y;
+                lastQ[seq]++;
             } else if (queryType == 2) {
-                lastAnswer = sequence.get(y % sequence.size());
+                System.out.println("y: " + y);
+                System.out.println("lastAnswer index: " + y % sequence.length);
+
+                lastAnswer = sequence[y % sequence.length];
                 System.out.println(lastAnswer);
             }
         }
