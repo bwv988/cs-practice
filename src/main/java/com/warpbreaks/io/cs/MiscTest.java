@@ -72,11 +72,30 @@ public class MiscTest {
         }
     }
     
+    public void runtimeAnalysis(int N) {
+        long startTime = System.currentTimeMillis();
+        
+        int i, j, k, count = 0; 
+        for (i = 0; i < N; i++) 
+          for (j = 0; j < N; j++) 
+            for (k = 0; k < N; k++) 
+              count++;
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        
+        System.out.println("Elapsed time: " + elapsedTime + " ms");    
+    }
+    
     public static void main(String[] args) {
         MiscTest obj = new MiscTest();
         
         //obj.q1();
         //obj.q2();
-        obj.q3(9);
+        //obj.q3(9);
+        
+        obj.runtimeAnalysis(10);
+        obj.runtimeAnalysis(100);
+        obj.runtimeAnalysis(1000);
     }   
 }
