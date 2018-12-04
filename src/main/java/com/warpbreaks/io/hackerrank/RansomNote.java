@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class RansomNote {
 
-    // Complete the checkMagazine function below.
+    // Very trivial implementation.
+    // Should really consider using a Set.
+    // Another improvement: Remove final loop by subtracting.
     static String checkMagazine(String[] magazine, String[] note) {
         Map<String, Integer> magMap = new HashMap<>();
         Map<String, Integer> noteMap = new HashMap<>();
